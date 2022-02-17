@@ -13,7 +13,7 @@ function updateInput(product, type) {
 
     // console.log(foodInput);
     calculated();
-    calculadedBalance();
+    calculatedBalance();
     // return foodInput;
 }
 
@@ -59,8 +59,8 @@ document.getElementById('saving-button').addEventListener('click', function () {
 
 });
 
-//saving calculated
-function calculadedBalance() {
+//saving area
+function calculatedBalance() {
 
 
     const foodInput = getBalance('food');
@@ -69,7 +69,7 @@ function calculadedBalance() {
     const tutalInput = getBalance('tutal');
     const savingInput = getBalance('saving');
 
-
+    //saving calculated
     const expensesTutal = foodInput + rentInput + clothInput;
     const tutalBalance = tutalInput - expensesTutal;
     const savingAmount = tutalInput * savingInput / 100;
