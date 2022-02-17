@@ -1,6 +1,6 @@
 
 
-
+//Input feild 
 function updateInput(product, type) {
     const inputNumber = document.getElementById(product + '-input');
     const inputText = inputNumber.value;
@@ -17,7 +17,7 @@ function updateInput(product, type) {
     // return foodInput;
 }
 
-
+// Calculate Button
 document.getElementById('calculate-button').addEventListener('click', function () {
     updateInput('food');
     updateInput('rent');
@@ -26,18 +26,20 @@ document.getElementById('calculate-button').addEventListener('click', function (
 
 });
 
-
-function getBalanceff(type) {
+// Balance check
+function getBalance(type) {
 
     const inputNumber = document.getElementById(type + '-input');
     const inputText = parseFloat(inputNumber.value);
     return inputText;
 }
+
+//Calculated
 function calculated() {
-    const foodInput = getBalanceff('food');
-    const rentInput = getBalanceff('rent');
-    const clothInput = getBalanceff('clothes');
-    const tutalInput = getBalanceff('tutal');
+    const foodInput = getBalance('food');
+    const rentInput = getBalance('rent');
+    const clothInput = getBalance('clothes');
+    const tutalInput = getBalance('tutal');
 
     const expensesTutal = foodInput + rentInput + clothInput;
     const tutalBalance = tutalInput - expensesTutal;
@@ -46,6 +48,8 @@ function calculated() {
     // console.log(expensesTutal);
 };
 
+
+//Siving Button
 document.getElementById('saving-button').addEventListener('click', function () {
     updateInput('saving');
     updateInput('food');
@@ -55,6 +59,7 @@ document.getElementById('saving-button').addEventListener('click', function () {
 
 });
 
+//saving calculated
 function calculadedBalance(hello) {
 
 
@@ -74,13 +79,14 @@ function calculadedBalance(hello) {
     document.getElementById('remaining-balance').innerText = remainingBalance;
 };
 
+//error message
 function verifyPin() {
     const pin1 = document.getElementById('food-input').value;
     const pin2 = document.getElementById('rent-input').value;
     const pin3 = document.getElementById('clothes-input').value;
     const pin4 = document.getElementById('tutal-input').value;
     const pin5 = document.getElementById('saving-input').value;
-    if (typeof pin, pin2, pin3, pin4, pin5 == '') {
+    if (typeof pin1, pin2, pin3, pin4, pin5 == '') {
         const failError = document.getElementById('notify-fail');
         failError.style.display = 'block';
     }
@@ -94,8 +100,28 @@ function verifyPin() {
         const failError2 = document.getElementById('less-money');
         failError2.style.display = 'block';
     }
+    else {
+        const failError1 = document.getElementById('notify-success');
+        failError1.style.display = 'block';
+    }
 
 
+    if (pin1, pin2, pin3, pin4, pin5 < 0) {
+        const mainasInput = document.getElementById('mainas-error');
+        mainasInput.style.display = 'block';
+    }
+    else {
+        const failError1 = document.getElementById('notify-success');
+        failError1.style.display = 'block';
+    }
+    if (typeof pin1, pin2, pin3, pin4, pin5 == 'string') {
+        const stringInput = document.getElementById('mainas-error');
+        stringInput.style.display = 'block';
+    }
+    else {
+        const failError1 = document.getElementById('notify-success');
+        failError1.style.display = 'block';
+    }
 }
 
 

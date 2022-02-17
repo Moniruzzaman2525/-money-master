@@ -14,20 +14,24 @@
     <main class="container mx-auto">
         <h1 class="text-center m-4 text text-teal-400 font-semibold">Welcome To My Savings Foundation</h1>
         <section class="grid lg:grid-cols-2 md:grid-cols-2 2xl:grid-cols-2 xl:grid-cols-2 grid-cols-1">
+
+            <!-- //images section -->
             <div class="images-section">
-                <img src="images/money.jpg" alt="">
                 <div class="notify-section">
                     <p id="notify-fail" class="notify">You have not given any input, please give input</p>
-                    <p id="notify-success" class="notify">Pin Match.....Thank You</p>
+                    <p id="notify-success" class="notify">Input Match.....Thank You</p>
                 </div>
                 <div class="notify-section">
                     <p id="less-money" class="notify">Your current money is low</p>
-                    <p id="" class="notify">Pin Match.....Thank You</p>
+                    <p id="mainas-error" class="notify">Please do not give a minus number</p>
                 </div>
+                <img class="rounded" src="images/moneya.jpg" alt="">
             </div>
+
+            <!-- Input seciton -->
             <div>
                 <div class="m-8 ">
-                    <h3 class="text-center font-semibold">Income</h3>
+                    <h3 class="text-center mb-2 font-semibold">Income</h3>
                     <div class="grid mb-2 grid-cols-2 mx-auto">
                         <label class="font-semibold">Income:</label>
                         <input id="tutal-input" class="bg-zinc-400 mt-2 p-1 text-white rounded" type="text">
