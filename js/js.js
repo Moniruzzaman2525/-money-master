@@ -1,42 +1,101 @@
 
 
-const calculatedButton = document.getElementById('calculate-button');
-calculatedButton.addEventListener('click', function () {
-    // food 
-    const foodInputA = document.getElementById('food-input');
-    const foodInputText = foodInputA.value;
-    const foodInput = parseInt(foodInputText);
-    foodInputA.value = '';
-    //rent area
-    const rentInputA = document.getElementById('rent-input');
-    const rentInputText = rentInputA.value;
-    const rentInput = parseInt(rentInputText);
-    rentInputA.value = '';
 
-    //clothes area
-    const clothesInputA = document.getElementById('clothes-input');
-    const clothesInputText = clothesInputA.value;
-    const clothesInput = parseInt(clothesInputText);
-    clothesInputA.value = '';
-    //tutal balance
-    const tutalBalanceA = document.getElementById('tutal-balance');
-    const tutalBalanceText = tutalBalanceA.value;
-    tutalBalance = parseInt(tutalBalanceText);
-    tutalBalanceA.value = '';
-    //Expenses sum
-    const tutalCost = foodInput + rentInput + clothesInput;
-    console.log(tutalBalance);
+function updateInput(product, type) {
+    const inputNumber = document.getElementById(product + '-input');
+    const inputText = inputNumber.value;
+    inputNumber.value = parseFloat(inputText);
 
-    // expensive add
-    const expensiveTutal = document.getElementById('expenses-balance');
-    const expensesTutalText = expensiveTutal.innerText;
-    const expensesTutalTextA = parseInt(expensesTutalText);
-    expensiveTutal.innerText = tutalCost;
 
-    //main b
-    //extra balance
-    const extraBlanacne = document.getElementById('extra-balance');
-    const extraBlanacneText = extraBlanacne.innerText;
-    const extraBlanacneTextA = parseInt(extraBlanacneText);
-    extraBlanacne.innerText = tutalBalance - tutalCost;
-})
+    const inputTutal = document.getElementById(product + '-input');
+    inputTutal.innerText = inputText;
+
+
+    // console.log(foodInput);
+    calculated();
+    calculadedBalance();
+    // return foodInput;
+}
+
+
+document.getElementById('calculate-button').addEventListener('click', function () {
+    updateInput('food');
+    updateInput('rent');
+    updateInput('clothes');
+    updateInput('tutal');
+
+});
+
+
+function getBalanceff(type) {
+
+    const inputNumber = document.getElementById(type + '-input');
+    const inputText = parseFloat(inputNumber.value);
+    return inputText;
+}
+function calculated() {
+    const foodInput = getBalanceff('food');
+    const rentInput = getBalanceff('rent');
+    const clothInput = getBalanceff('clothes');
+    const tutalInput = getBalanceff('tutal');
+
+    const expensesTutal = foodInput + rentInput + clothInput;
+    const tutalBalance = tutalInput - expensesTutal;
+    document.getElementById('expenses-balance').innerText = expensesTutal;
+    document.getElementById('extra-balance').innerText = tutalBalance;
+    // console.log(expensesTutal);
+};
+
+document.getElementById('saving-button').addEventListener('click', function () {
+    updateInput('saving');
+    updateInput('food');
+    updateInput('rent');
+    updateInput('clothes');
+    updateInput('tutal');
+
+});
+
+function calculadedBalance(hello) {
+
+
+    const foodInput = getBalanceff('food');
+    const rentInput = getBalanceff('rent');
+    const clothInput = getBalanceff('clothes');
+    const tutalInput = getBalanceff('tutal');
+    const savingInput = getBalanceff('saving');
+
+
+    const expensesTutal = foodInput + rentInput + clothInput;
+    const tutalBalance = tutalInput - expensesTutal;
+    const savingAmount = tutalInput * savingInput / 100;
+    const remainingBalance = tutalBalance - savingAmount;
+
+    document.getElementById('saving-balance').innerText = savingAmount;
+    document.getElementById('remaining-balance').innerText = remainingBalance;
+};
+
+function verifyPin() {
+    const pin1 = document.getElementById('food-input').value;
+    const pin2 = document.getElementById('rent-input').value;
+    const pin3 = document.getElementById('clothes-input').value;
+    const pin4 = document.getElementById('tutal-input').value;
+    const pin5 = document.getElementById('saving-input').value;
+    if (typeof pin, pin2, pin3, pin4, pin5 == '') {
+        const failError = document.getElementById('notify-fail');
+        failError.style.display = 'block';
+    }
+    else {
+        const failError1 = document.getElementById('notify-success');
+        failError1.style.display = 'block';
+    }
+
+    const addBalance = pin1 + pin2 + pin3;
+    if (addBalance > pin4) {
+        const failError2 = document.getElementById('less-money');
+        failError2.style.display = 'block';
+    }
+
+
+}
+
+

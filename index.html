@@ -6,50 +6,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assigment</title>
+    <link rel="stylesheet" href="\css\style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .hello {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-        }
-    </style>
 </head>
 
 <body>
     <main class="container mx-auto">
-        <h1>Manik Ar Bank</h1>
-        <section class="grid grid-cols-2">
-            <div class="image-part">
+        <h1 class="text-center m-4 text text-teal-400 font-semibold">Welcome To My Savings Foundation</h1>
+        <section class="grid lg:grid-cols-2 md:grid-cols-2 2xl:grid-cols-2 xl:grid-cols-2 grid-cols-1">
+            <div class="images-section">
                 <img src="images/money.jpg" alt="">
+                <div class="notify-section">
+                    <p id="notify-fail" class="notify">You have not given any input, please give input</p>
+                    <p id="notify-success" class="notify">Pin Match.....Thank You</p>
+                </div>
+                <div class="notify-section">
+                    <p id="less-money" class="notify">Your current money is low</p>
+                    <p id="" class="notify">Pin Match.....Thank You</p>
+                </div>
             </div>
             <div>
-                <div class="m-8">
-                    <h3 class="text-center">Income</h3>
-                    <div class="grid grid-cols-2 mx-auto">
-                        <label for="">Income:</label>
-                        <input id="tutal-balance" class="bg-zinc-400 mt-2 p-2 text-white rounded" type="text">
+                <div class="m-8 ">
+                    <h3 class="text-center font-semibold">Income</h3>
+                    <div class="grid mb-2 grid-cols-2 mx-auto">
+                        <label class="font-semibold">Income:</label>
+                        <input id="tutal-input" class="bg-zinc-400 mt-2 p-1 text-white rounded" type="text">
                     </div>
-                    <h3 class="m-2 text-center">Expenses</h3>
-                    <div class="grid grid-cols-2">
-                        <label for="">Food:</label>
-                        <input id="food-input" class="bg-zinc-400 mt-2 p-2 text-white rounded" type="text">
-                    </div>
-                    <div class="grid grid-cols-2">
-                        <label for="">Rent:</label>
-                        <input id="rent-input" class="bg-zinc-400 mt-2 p-2 text-white rounded" type="text">
+                    <h3 class="text-center font-semibold">Expenses</h3>
+                    <div class="grid grid-cols-2 mt-2">
+                        <label class="font-semibold">Food:</label>
+                        <input id="food-input" class="bg-zinc-400 mt-2 p-1 text-white rounded" type="text">
                     </div>
                     <div class="grid grid-cols-2">
-                        <label for="">Clothes:</label>
-                        <input id="clothes-input" class="bg-zinc-400 mt-2 p-2 text-white rounded" type="text">
+                        <label class="font-semibold">Rent:</label>
+                        <input id="rent-input" class="bg-zinc-400 mt-2 p-1 text-white rounded" type="text">
                     </div>
-                    <button id="calculate-button"
-                        class="ml-16 bg-sky-400 text-white  py-1 rounded m-4 px-8">Calculate</button>
-                    <h4 class="text-center">Tutal Expenses: <span id="expenses-balance">00</span></h4>
-                    <h4 class="text-center">Balance: <span id="extra-balance">00</span></h4>
+                    <div class="grid grid-cols-2">
+                        <label class="font-semibold">Clothes:</label>
+                        <input id="clothes-input" class="bg-zinc-400 mt-2 p-1 text-white rounded" type="text">
+                    </div>
+                    <button id="calculate-button" class="ml-16 bg-sky-400 text-white  py-1 rounded m-4 px-8"
+                        onclick="verifyPin()">Calculate</button>
+                    <h4 class="text-center font-semibold">Tutal Expenses: <span id="expenses-balance">00</span></h4>
+                    <h4 class="text-center font-semibold">Balance: <span id="extra-balance">00</span></h4>
+                </div>
+                <div class="grid grid-cols-4 m-8">
+                    <h4 class="font-semibold">Save:</h4>
+                    <input id="saving-input" class="bg-zinc-400 rounded p-1 text-white" type="text" placeholder="hello">
+                    <h4 class="text-center font-semibold">%</h4>
+                    <button id="saving-button" class="bg-sky-400 text-white  py-1 rounded"
+                        onclick="verifyPin()">Save</button>
+                </div>
+                <div>
+                    <h4 class="text-center font-semibold">Saving Amount: <span id="saving-balance">00</span></h4>
+                    <h4 class="text-center font-semibold">Remaining Balance: <span id="remaining-balance">00</span></h4>
                 </div>
             </div>
         </section>
     </main>
+
 
 
     <script src="js/js.js"></script>
