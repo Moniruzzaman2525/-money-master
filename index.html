@@ -27,28 +27,32 @@
                     <h3 class="text-center">Income</h3>
                     <div class="grid grid-cols-2 mx-auto">
                         <label for="">Income:</label>
-                        <input class="bg-zinc-400 mt-2 rounded" type="text">
+                        <input id="tutal-balance" class="bg-zinc-400 mt-2 p-2 text-white rounded" type="text">
                     </div>
-                    <h3 class="text-center">Expenses</h3>
+                    <h3 class="m-2 text-center">Expenses</h3>
                     <div class="grid grid-cols-2">
                         <label for="">Food:</label>
-                        <input class="bg-zinc-400 mt-2 rounded" type="text">
+                        <input id="food-input" class="bg-zinc-400 mt-2 p-2 text-white rounded" type="text">
                     </div>
                     <div class="grid grid-cols-2">
                         <label for="">Rent:</label>
-                        <input class="bg-zinc-400 mt-2 rounded" type="text">
+                        <input id="rent-input" class="bg-zinc-400 mt-2 p-2 text-white rounded" type="text">
                     </div>
                     <div class="grid grid-cols-2">
                         <label for="">Clothes:</label>
-                        <input class="bg-zinc-400 mt-2 rounded" type="text">
+                        <input id="clothes-input" class="bg-zinc-400 mt-2 p-2 text-white rounded" type="text">
                     </div>
-                    <button class="ml-16 bg-sky-400 text-white  py-1 rounded mt-4 px-8">Calculate</button>
-                    <h4 class="text-center">Tutal Expenses: <span>5500</span></h4>
-                    <h4 class="text-center">Balance: <span>4500</span></h4>
+                    <button id="calculate-button"
+                        class="ml-16 bg-sky-400 text-white  py-1 rounded m-4 px-8">Calculate</button>
+                    <h4 class="text-center">Tutal Expenses: <span id="expenses-balance">00</span></h4>
+                    <h4 class="text-center">Balance: <span id="extra-balance">00</span></h4>
                 </div>
             </div>
         </section>
     </main>
+
+
+    <script src="js/js.js"></script>
 </body>
 
 </html>
