@@ -111,16 +111,16 @@ function verifyPin() {
         mainasInput.style.display = 'block';
     }
     else {
-        const failError1 = document.getElementById('notify-success');
-        failError1.style.display = 'block';
+        // const failError1 = document.getElementById('notify-success');
+        // failError1.style.display = 'block';
     }
     if (typeof pin1, pin2, pin3, pin4, pin5 == 'string') {
         const stringInput = document.getElementById('mainas-error');
         stringInput.style.display = 'block';
     }
     else {
-        const failError1 = document.getElementById('notify-success');
-        failError1.style.display = 'block';
+        // const failError1 = document.getElementById('notify-success');
+        // failError1.style.display = 'block';
     }
 }
 
